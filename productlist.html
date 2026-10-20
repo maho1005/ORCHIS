@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ORCHIS | Parfumer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/productlist.css" />
+    <script src="js/productlist.js" defer></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="index.html" class="logo" aria-label="ORCHIS – forsiden">
+        <img src="images/logo.png" alt="ORCHIS" />
+      </a>
+
+      <nav class="navigation" aria-label="Hovednavigation">
+        <a href="productlist.html" aria-current="page">Shop</a>
+
+        <a href="basket.html" class="kurv" aria-label="Gå til kurv">
+          <img src="images/basket.png" alt="" />
+        </a>
+      </nav>
+    </header>
+
+    <main class="shop">
+      <h1>Parfumer</h1>
+      <p class="shop-intro">Find en duft, der passer til dig og din hverdag.</p>
+
+      <div class="shop-controls">
+        <div class="control">
+          <label for="brandFilter">Mærke</label>
+
+          <select id="brandFilter">
+            <option value="">Alle mærker</option>
+          </select>
+        </div>
+
+        <div class="control">
+          <label for="sortering">Sortér efter</label>
+
+          <select id="sortering">
+            <option value="">Anbefalet</option>
+            <option value="pris-op">Pris lav-høj</option>
+            <option value="pris-ned">Pris høj-lav</option>
+            <option value="navn-op">A-Å</option>
+            <option value="navn-ned">Å-A</option>
+          </select>
+        </div>
+      </div>
+
+      <p id="status" class="shop-status" role="status">Indlæser parfumer …</p>
+
+      <section id="produktliste" class="product-grid" aria-label="Parfumer"></section>
+    </main>
+
+    <footer class="footer">
+      <a href="index.html" class="footer-logo">ORCHIS</a>
+    </footer>
+  </body>
+</html>
