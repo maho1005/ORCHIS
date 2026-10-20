@@ -159,25 +159,56 @@ Vi henter data fra et API i JSON-format.
 
 ```json
 {
-  "id": 1,
-  "title": "Opskriftsnavn",
-  "description": "Kort beskrivelse",
-  "category": "dessert",
-  "cookTime": 45,
-  "servings": 4,
-  "thumbnail": "billede.jpg"
-}
+      "id": 6,
+      "title": "Calvin Klein CK One",
+      "description": "CK One by Calvin Klein is a classic unisex fragrance, known for its fresh and clean scent. It's a versatile fragrance suitable for everyday wear.",
+      "category": "fragrances",
+      "price": 49.99,
+      "brand": "Calvin Klein",
+      "reviews": [
+        {
+          "rating": 2,
+          "comment": "Very disappointed!",
+          "date": "2025-04-30T09:41:02.053Z",
+          "reviewerName": "Layla Young",
+          "reviewerEmail": "layla.young@x.dummyjson.com"
+        },
+        {
+          "rating": 4,
+          "comment": "Fast shipping!",
+          "date": "2025-04-30T09:41:02.053Z",
+          "reviewerName": "Daniel Cook",
+          "reviewerEmail": "daniel.cook@x.dummyjson.com"
+        },
+        {
+          "rating": 3,
+          "comment": "Not as described!",
+          "date": "2025-04-30T09:41:02.053Z",
+          "reviewerName": "Jacob Cooper",
+          "reviewerEmail": "jacob.cooper@x.dummyjson.com"
+        }
+      ],
+      "images": [
+        "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/1.webp",
+        "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/2.webp",
+        "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/3.webp"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/thumbnail.webp"
+    }
 ```
 
 ### Felter vi bruger
 
 - **id** – bruges til at sende brugeren videre til detaljesiden
-- **title** – opskriftsnavn
-- **description** – beskrivelse af opskriften
-- **category** – opskriftkategori (fx dessert, hovedret, forret)
-- **cookTime** – tilberedningstid i minutter
-- **servings** – antal portioner
-- **thumbnail** – opskriftsbillede
+- **title** – produktnavn
+- **description** – beskrivelse af produktet
+- **category** – produktkategori
+- **price** – produktets pris
+- **brand** – produktets mærke
+- **reviews** – liste over kundeanmeldelser med bedømmelse og kommentarer
+- **images** – produktbilleder
+- **thumbnail** – produktets miniaturebillede, som bruges til at vise produktet i en oversigt
+
 
 ---
 
@@ -251,17 +282,16 @@ Det var også lidt svært at få id med videre i URL’en til detaljesiden.
 
 ## Mulige forbedringer
 
-Hvis vi skulle arbejde videre med projektet, kunne vi forbedre det ved at tilføje:
+Hvis vi skulle arbejde videre med projektet, kunne vi:
 
-- Søgefunktion
-- Error handling
-- Loading state
+- Gennemføre flere brugertests på det færdigkodede website.
+- Arbejde videre med mere detaljerede produktinformationer.
 
 ---
 
 ## Gruppemedlemmer
 
-- Steen I. Sko
-- Peter Pedal
-- Karsten Lange Løgstrup
-- Pia Planlægger
+- Line Bøgh
+- Laura Dinsen
+- Mona Taherzadeh 
+- Maja Holgersen
