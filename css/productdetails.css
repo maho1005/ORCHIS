@@ -1,0 +1,168 @@
+/* DETALJESIDE */
+
+.productdetails-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.productdetails-page .perfume-main {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 45px 8% 90px;
+  flex: 1;
+}
+
+.productdetails-page .perfume-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 65px;
+  background-color: #ffffff;
+  padding: 35px;
+  border-radius: 10px;
+}
+
+.productdetails-page .perfume-image {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.productdetails-page .perfume-image img {
+  display: block;
+  width: 100%;
+  height: 420px;
+  padding: 20px;
+  object-fit: contain;
+}
+
+.productdetails-page .perfume-copy {
+  min-width: 0;
+  border-radius: 10px;
+  background-color: transparent;
+  padding: 25px 0 0;
+}
+
+.productdetails-page .perfume-brand {
+  margin-bottom: 6px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.productdetails-page .perfume-copy h1 {
+  max-width: 350px;
+  margin-bottom: 12px;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.15;
+  overflow-wrap: break-word;
+}
+
+.productdetails-page .perfume-price {
+  margin-bottom: 35px;
+  font-size: 14px;
+  color: #655858;
+}
+
+.productdetails-page .perfume-button {
+  padding: 12px 24px;
+  font-size: 13px;
+}
+
+.productdetails-page .perfume-status {
+  min-height: 36px;
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.productdetails-page .perfume-information {
+  margin-top: 45px;
+}
+
+.productdetails-page .perfume-information details {
+  border-top: 1px solid #d9cdca;
+}
+
+.productdetails-page .perfume-information details:last-child {
+  border-bottom: 1px solid #d9cdca;
+}
+
+.productdetails-page .perfume-information summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 0;
+  list-style: none;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.productdetails-page .perfume-information summary::-webkit-details-marker {
+  display: none;
+}
+
+.productdetails-page .perfume-information summary::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  margin-right: 4px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg);
+}
+
+.productdetails-page .perfume-information details[open] summary::after {
+  transform: rotate(225deg);
+}
+
+.productdetails-page .perfume-information details > p,
+.productdetails-page #reviews {
+  padding-bottom: 20px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.productdetails-page .perfume-review {
+  padding: 14px 0;
+}
+
+.productdetails-page .perfume-review + .perfume-review {
+  border-top: 1px solid var(--soft-pink);
+}
+
+.productdetails-page .review-name {
+  font-weight: 600;
+}
+
+.productdetails-page .perfume-review p + p {
+  margin-top: 5px;
+}
+
+.productdetails-page .footer {
+  border-top: 0;
+}
+
+/* MOBIL */
+
+@media (max-width: 768px) {
+  .productdetails-page .perfume-main {
+    padding: 25px 6% 60px;
+  }
+
+  .productdetails-page .perfume-layout {
+    gap: 30px;
+  }
+
+  .productdetails-page .perfume-image img {
+    height: 320px;
+    padding: 10px;
+  }
+
+  .productdetails-page .perfume-copy h1 {
+    font-size: 29px;
+  }
+}
