@@ -1,0 +1,147 @@
+/* KURV */
+
+.cart-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-main {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 40px 8% 90px;
+  flex: 1;
+}
+
+.cart-main > h1 {
+  margin-bottom: 35px;
+  font-size: 36px;
+}
+
+/* PRODUKTER I KURVEN */
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 30px;
+
+  margin-bottom: 20px;
+  padding: 25px;
+
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.cart-image img {
+  display: block;
+  width: 120px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.cart-copy {
+  min-width: 0;
+}
+
+.cart-brand {
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.cart-copy h2 {
+  max-width: 350px;
+  margin-bottom: 15px;
+  font-size: 23px;
+  line-height: 1.25;
+  overflow-wrap: break-word;
+}
+
+.cart-price {
+  align-self: center;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.cart-remove {
+  padding: 3px 0;
+  border: 0;
+  border-bottom: 1px solid var(--soft-pink);
+  background: transparent;
+  color: var(--black-bean);
+  font-size: 12px;
+}
+
+.cart-remove:hover {
+  color: var(--maroon);
+}
+
+.cart-empty {
+  padding: 25px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* SAMLET BELØB */
+
+.cart-summary {
+  max-width: 430px;
+  margin-top: 40px;
+  padding-top: 25px;
+  border-top: 1px solid var(--soft-pink);
+}
+
+.cart-summary h2 {
+  margin-bottom: 25px;
+  font-size: 26px;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.cart-status {
+  margin-top: 20px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.cart-page .footer {
+  border-top: 0;
+}
+
+/* MOBIL */
+
+@media (max-width: 600px) {
+  .cart-main {
+    padding: 25px 6% 60px;
+  }
+
+  .cart-main > h1 {
+    font-size: 30px;
+  }
+
+  .cart-item {
+    grid-template-columns: 75px minmax(0, 1fr);
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .cart-image img {
+    width: 75px;
+    height: 110px;
+  }
+
+  .cart-copy h2 {
+    font-size: 19px;
+  }
+
+  .cart-price {
+    grid-column: 2;
+  }
+}
