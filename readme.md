@@ -153,48 +153,48 @@ Vi har prøvet ikke at skrive kommentarer til helt åbenlyse ting, men kun dér 
 
 ## Data og JSON-struktur
 
-Vi henter data fra et API i JSON-format.
+Vi henter data fra et API i JSON-format fra DummyJSON. Vi bruger endpoint `https://dummyjson.com/products/category/fragrances?limit=0`
 
 **Et objekt kan fx se sådan ud:**
 
 ```json
 {
-      "id": 6,
-      "title": "Calvin Klein CK One",
-      "description": "CK One by Calvin Klein is a classic unisex fragrance, known for its fresh and clean scent. It's a versatile fragrance suitable for everyday wear.",
-      "category": "fragrances",
-      "price": 49.99,
-      "brand": "Calvin Klein",
-      "reviews": [
-        {
-          "rating": 2,
-          "comment": "Very disappointed!",
-          "date": "2025-04-30T09:41:02.053Z",
-          "reviewerName": "Layla Young",
-          "reviewerEmail": "layla.young@x.dummyjson.com"
-        },
-        {
-          "rating": 4,
-          "comment": "Fast shipping!",
-          "date": "2025-04-30T09:41:02.053Z",
-          "reviewerName": "Daniel Cook",
-          "reviewerEmail": "daniel.cook@x.dummyjson.com"
-        },
-        {
-          "rating": 3,
-          "comment": "Not as described!",
-          "date": "2025-04-30T09:41:02.053Z",
-          "reviewerName": "Jacob Cooper",
-          "reviewerEmail": "jacob.cooper@x.dummyjson.com"
-        }
-      ],
-      "images": [
-        "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/1.webp",
-        "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/2.webp",
-        "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/3.webp"
-      ],
-      "thumbnail": "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/thumbnail.webp"
+  "id": 6,
+  "title": "Calvin Klein CK One",
+  "description": "CK One by Calvin Klein is a classic unisex fragrance, known for its fresh and clean scent. It's a versatile fragrance suitable for everyday wear.",
+  "category": "fragrances",
+  "price": 49.99,
+  "brand": "Calvin Klein",
+  "reviews": [
+    {
+      "rating": 2,
+      "comment": "Very disappointed!",
+      "date": "2025-04-30T09:41:02.053Z",
+      "reviewerName": "Layla Young",
+      "reviewerEmail": "layla.young@x.dummyjson.com"
+    },
+    {
+      "rating": 4,
+      "comment": "Fast shipping!",
+      "date": "2025-04-30T09:41:02.053Z",
+      "reviewerName": "Daniel Cook",
+      "reviewerEmail": "daniel.cook@x.dummyjson.com"
+    },
+    {
+      "rating": 3,
+      "comment": "Not as described!",
+      "date": "2025-04-30T09:41:02.053Z",
+      "reviewerName": "Jacob Cooper",
+      "reviewerEmail": "jacob.cooper@x.dummyjson.com"
     }
+  ],
+  "images": [
+    "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/1.webp",
+    "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/2.webp",
+    "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/3.webp"
+  ],
+  "thumbnail": "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/thumbnail.webp"
+}
 ```
 
 ### Felter vi bruger
@@ -209,47 +209,25 @@ Vi henter data fra et API i JSON-format.
 - **images** – produktbilleder
 - **thumbnail** – produktets miniaturebillede, som bruges til at vise produktet i en oversigt
 
-
----
-
-## Formular og validering
-
-Vi har lavet en formular, hvor brugeren kan indtaste oplysninger.
-
-**HTML-validering:**
-
-- `required` – feltet skal udfyldes
-- `type="email"` – validerer email-format
-- `type="number"` – accepterer kun tal
-
-Det sikrer, at brugeren ikke kan sende formularen, hvis felterne ikke er udfyldt korrekt.
-
 ---
 
 ## Git og branches
 
-Vi har brugt GitHub til at samarbejde om projektet.
+Vi har brugt GitHub til at samarbejde om projektet, men har ikke brugt det så meget og så systematisk som vi gerne ville. Årsagen er, at primært én person stod for at skrive kode og gjorde dette primært lokalt på sin computer. Der var derfor ikke så stort brug for branches og Github som samarbejdsværktøj i starten. Dog anvendte vi det mere og mere i den sidste fase af projektet, hvor vi arbejdede med branches, commits og versionstyring.
 
-Vi har arbejdet med branches, så vi ikke sad og ændrede i det samme på samme tid.
-
-Vi navngav branchene med feature først og navnet på den, der lavede branchen til sidst.
+Vi er bevidste om, at Git og Github er godt til versionsstyring og samarbejde. Løbende commits gør det lettere at følge ændringer, finde fejl og vende tilbage til tidligere versioner. Det er derfor en af de ting, vi gerne vil blive bedre til og mere selvsikre omkring, og vi øver os derfor i at bruge det mere og mere fremadrettet.
 
 ### Eksempler på branches
 
-- `feature-forside-steen`
-- `feature-opskriftsliste-peter`
-- `feature-detaljeside-karsten`
-- `feature-formular-pia`
+- `readme.md`
 
 ### Workflow
 
-1. Lave en branch med feature-navn og eget navn til sidst
-2. Kode en feature
+1. Lave en branch med let forståeligt navn
+2. Kode en feature - eller skrive i readme.md
 3. Committe ændringer
 4. Pushe til GitHub
 5. Merge til main når det virkede
-
-Det gjorde det nemmere at holde styr på, hvem der lavede hvad.
 
 ---
 
@@ -260,9 +238,10 @@ Vi har tænkt bæredygtighed ind i projektet ved at holde page weight under 250 
 **Tiltag:**
 
 - Ingen videoer
-- Ingen tunge frameworks
-- Genbruge af kode
-- Optimerede billeder
+- Produktkort bruger loading="lazy" på billederne, så billeder kan indlæses efter behov.
+- Produktdata genbruges ved filtrering og sortering uden nye API-kald for hvert valg.
+- Billeder omfatter blandt andet WebP-filer.
+- Den samme HTML genbruges til alle sider med produktdetaljer
 
 ---
 
@@ -285,7 +264,9 @@ Det var også lidt svært at få id med videre i URL’en til detaljesiden.
 Hvis vi skulle arbejde videre med projektet, kunne vi:
 
 - Gennemføre flere brugertests på det færdigkodede website.
-- Arbejde videre med mere detaljerede produktinformationer.
+- Arbejde videre med mere detaljerede produktinformationer. For eksempel inkludere noget data om størrelser eller ml-indhold på parfumerne. Denne information fandtes dog ikke direkte i produktdataet fra DummyJSON'et - men man kunne evt arbejde videre med at 'oversætte' noget data.
+- vi ville gerne arbejde med en funktionel søgefunktion, men vurderede det ville være for ressourcekrævende
+- Liste med 'relevante produkter' f.eks. efter kurv-oversigten eller efter produktinformation på productdetails.html.
 
 ---
 
@@ -293,5 +274,5 @@ Hvis vi skulle arbejde videre med projektet, kunne vi:
 
 - Line Bøgh
 - Laura Dinsen
-- Mona Taherzadeh 
+- Mona Taherzadeh
 - Maja Holgersen
