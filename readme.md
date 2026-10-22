@@ -133,21 +133,22 @@ Vi bruger overvejende camelCase i JavaScript, eksempelvis `maerkeFilter`, `statu
 
 ## Kommentarer i koden
 
-Vi har kommenteret de steder i koden, hvor det giver mening.
-Fx ved funktioner, fetch-kald og steder hvor der sker DOM-manipulation.
+Vi har kommenteret de steder i koden, hvor det giver mening. Vi har fokuseret på at lave mere beskrivende kommentarer i js. I HTML har vi ikke følt behov for at lave kommentarer, fordi det ikke har været særligt kompliceret. I CSS har vi lavet kommentarer som fungerer mere som overskrifter, der markerer forskellige 'afsnit'.
 
 **Eksempel:**
 
 ```javascript
-// Henter opskrifter fra Rest API'et
-async function fetchRecipes() {
-  const res = await fetch(apiURL);
-  const data = await res.json();
-  return data.recipes;
+// Sorterer produkterne efter pris eller navn
+if (sortering.value === "pris-op") {
+  udsnit.sort((a, b) => a.price - b.price);
+} else if (sortering.value === "pris-ned") {
+  udsnit.sort((a, b) => b.price - a.price);
+} else if (sortering.value === "navn-op") {
+  udsnit.sort((a, b) => a.title.localeCompare(b.title, "da"));
+} else if (sortering.value === "navn-ned") {
+  udsnit.sort((a, b) => b.title.localeCompare(a.title, "da"));
 }
 ```
-
-Vi har prøvet ikke at skrive kommentarer til helt åbenlyse ting, men kun dér hvor det hjælper forståelsen.
 
 ---
 
@@ -247,15 +248,16 @@ Vi har tænkt bæredygtighed ind i projektet ved at holde page weight under 250 
 
 ## Udfordringer undervejs
 
-En af vores udfordringer var at få data fra Rest API’et vist korrekt på siderne.
-Det var også lidt svært at få id med videre i URL’en til detaljesiden.
+Det var en udfordring at få sitet til at ligne prototypen helt præcist. Derfor arbejdede vi med iterationer af sitet undervejs, og prøvede os frem med forskellige css stylinger. Desuden var der funktioner, vi havde foreslået i prototypen, men som vi ikke havde ressourcer til at få med i det endelige site - bl.a. nævnt under **mulige forbedringer**. Løsningen her var at afstemme ressourceforbrug, og prioritere vigtige arbejdsopgaver.
+
+Nogle gange drillede js. Vi brugte slides fra undervisningen til at huske og forstå hvordan koden virkede. Nogle gange brugte vi også AI til at finde fejl, som vi ikke selv kunne identificere. Baseret på det har vi fået kodeforslag, som vi efterfølgende har tilpasset vores konkrete case og design. Vi har også brugt AI til at forklare kode, når vi nogle gange havde svært ved at identificere hvad særlige stykker kode gjorde.
 
 **Løsninger:**
 
-- Console.logge data undervejs
-- Teste fetch-kald separat
-- Bruge URLSearchParams
-- Dele opgaverne mere tydeligt i gruppen
+- Arbejde med flere iterationer og prøve sig frem med styling.
+- Afstemme ressourceforbrug og prioritere arbejdsopgaver og kode
+- Anvende undervisningsmateriale og AI
+- Fejlfinde med HTML og CSS validering samt AI til js.
 
 ---
 
