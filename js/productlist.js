@@ -7,6 +7,8 @@ const statusTekst = document.querySelector("#status");
 
 let produkter = [];
 
+// Henter parfumer fra dummyJSON med fetch()
+
 fetch(endpoint)
   .then((res) => {
     if (!res.ok) {
@@ -43,18 +45,20 @@ fetch(endpoint)
     statusTekst.textContent = "Parfumerne kunne ikke hentes. Prøv at genindlæse siden.";
   });
 
+// Opdaterer produktlisten når brugeren anvender filter eller sortering
+
 maerkeFilter.addEventListener("change", opdaterListe);
 sortering.addEventListener("change", opdaterListe);
 
 function opdaterListe() {
   let udsnit = [...produkter];
 
-  // Filtrér efter det valgte mærke.
+  // Filtrerer produkterne efter det valgte mærke
   if (maerkeFilter.value !== "") {
     udsnit = udsnit.filter((element) => element.brand === maerkeFilter.value);
   }
 
-  // Sortér efter pris eller navn.
+  // Sorterer produkterne efter pris eller navn
   if (sortering.value === "pris-op") {
     udsnit.sort((a, b) => a.price - b.price);
   } else if (sortering.value === "pris-ned") {
@@ -76,6 +80,8 @@ function visData(json) {
   if (json.length === 0) {
     statusTekst.textContent = "Ingen parfumer matcher dit valg.";
   }
+
+  // Viser parfumerne med innerHTML og indsætter produktdata med ${}
 
   json.forEach((element) => {
     const udsolgt = Number(element.stock) <= 0;

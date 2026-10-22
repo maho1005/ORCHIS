@@ -4,6 +4,8 @@ const basketStatus = document.querySelector("#basketStatus");
 
 let kurv = [];
 
+// Henter den gemte kurv fra localStorage
+
 try {
   const gemtKurv = JSON.parse(localStorage.getItem("kurv") || "[]");
 
@@ -26,6 +28,8 @@ function visData() {
       </p>
     `;
   }
+
+  // Viser produkterne i kurven med innerHTML og beregner den samlede pris
 
   kurv.forEach((element, index) => {
     total += element.price;
@@ -75,6 +79,8 @@ function visData() {
     maximumFractionDigits: 2,
   });
 
+  // Bruger addEventListener til at 'aktivere' fjernProdukt(), når der klikkes på knappen
+
   document.querySelectorAll(".cart-remove").forEach((button) => {
     button.addEventListener("click", fjernProdukt);
   });
@@ -86,6 +92,8 @@ function fjernProdukt(e) {
   const nyKurv = [...kurv];
 
   nyKurv.splice(index, 1);
+
+  // Gemmer den opdaterede kurv i localStorage og viser ændringerne
 
   try {
     localStorage.setItem("kurv", JSON.stringify(nyKurv));

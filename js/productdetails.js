@@ -4,6 +4,8 @@ const endpoint = `https://dummyjson.com/products/${encodeURIComponent(id)}`;
 
 const product = document.querySelector("#product");
 
+// Henter den valgte parfume fra dummyJSON ved hjælp af produktets id, som den finder i URL'en
+
 if (id && /^\d+$/.test(id)) {
   fetch(endpoint)
     .then((res) => {
@@ -50,6 +52,8 @@ function visData(element) {
   });
 
   document.title = `${element.title} | ORCHIS`;
+
+  // Viser den valgte parfumes oplysninger ved at bruge INNERHTML og data med ${}
 
   product.innerHTML = `
     <div class="perfume-layout">
@@ -132,7 +136,7 @@ function visData(element) {
     anmeldelser.textContent = "Der er endnu ingen anmeldelser.";
   }
 
-  // Lægger parfumen i kurven.
+  // Lægger parfumen i kurven og gemmer kurven i localStorage
   document.querySelector("#addToBasket").addEventListener("click", () => {
     if (udsolgt) {
       return;
